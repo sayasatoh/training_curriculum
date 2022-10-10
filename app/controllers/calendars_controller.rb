@@ -8,7 +8,6 @@ class CalendarsController < ApplicationController
 
   # 予定の保存
   def create
-    binding.pry
     Plan.create(plan_params)
     redirect_to action: :index
   end
@@ -35,18 +34,33 @@ class CalendarsController < ApplicationController
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
+<<<<<<< Updated upstream
+
+      wday_num = Date.today.wday + x
+      if wday_num >= 7
+        wday_num = wday_num -7
+      end 
+        days = { :month => (@todays_date + x).month, :date => (@todays_date + x).day, :plans => today_plans, :wday => wdays[wday_num] }
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      
+=======
+=======
+>>>>>>> 8b79a6ec6f1dc3559ec568e1da5d45631f3159c6
 
       wday_num = # wdayメソッドを用いて取得した数値
       if #「wday_numが7以上の場合」という条件式
         wday_num = wday_num -7
       end
 
+>>>>>>> 8b79a6ec6f1dc3559ec568e1da5d45631f3159c6
       days = { :month => (@todays_date + x).month, :date => (@todays_date + x).day, :plans => today_plans, :wday => Data.today}
 
       days = {month: (@todays_date + x).month,date: (@todays_date+x).day,plans: today_plans}
 
+>>>>>>> Stashed changes
       @week_days.push(days)
     end
-
   end
 end
