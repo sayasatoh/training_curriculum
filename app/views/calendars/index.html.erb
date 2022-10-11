@@ -7,29 +7,12 @@
 
   <% end %>
 </div>
-<<<<<<< Updated upstream
-=======
-<div>
-  <div class='calendar'>
-    <%= @week_days.each do |day| %>
-      <div class='item'>
-        <div class='date'>
-          <% day[:month] %>/<% day[:date] %>
-        </div>
-
-<% end %>
-
->>>>>>> Stashed changes
 
 <div class='calendar'>
   <% @week_days.each do |day| %>
     <div class='item'>
       <div class='date'>
-<<<<<<< Updated upstream
         <%= day[:month] %>/<%= day[:date] %>/<%= day[:wday]%>
-=======
-        <% day[:month] %>/<% day[:date] %>
->>>>>>> Stashed changes
       </div>
 
         <ul class='content'>
